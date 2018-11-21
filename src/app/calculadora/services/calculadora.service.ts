@@ -1,8 +1,5 @@
 /**
- * Serviço reponsavel por execultar as operações da
- * calculadora
- *
- * @author Juliano Da Silva Barbosa
+ * @author Josué Yanes
  * @since 1.0.0
  */
 
@@ -10,39 +7,27 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CalculadoraService {
-/*Define as constantes ultilizadas
-  para identificar as operaçoes de calculo*/
-  static readonly SOMA: string = '+';
-  static readonly SUBTRACAO: string = '-';
-  static readonly DIVISAO: string = '/';
-  static readonly MULTIPLICACAO: string = '*';
+  static readonly SUMA: string = '+';
+  static readonly RESTA: string = '-';
+  static readonly DIVISION: string = '/';
+  static readonly MULTIPLICACION: string = '*';
 
   constructor() { }
-/**
- * Método que calcula operação matematica com
- * dois numeros
- * Suporta as operações soma, subtração, multiplicação
- * e divisão.
- *
- * @param num1 number
- * @param num2 number
- * @param operacao operação string Operação a ser execultada
- * @return number retorna o resultado da operação
- */
-  calcular(num1: number, num2: number, operacao: string): number {
-    let resultado: number; //armazena o resultado da operação
 
-    switch (operacao) {
-      case CalculadoraService.SOMA:
+  calcular(num1: number, num2: number, operacion: string): number {
+    let resultado: number; 
+
+    switch (operacion) {
+      case CalculadoraService.SUMA:
         resultado = num1 + num2;
         break;
-      case CalculadoraService.SUBTRACAO:
+      case CalculadoraService.RESTA:
         resultado = num1 - num2;
         break;
-      case CalculadoraService.DIVISAO:
+      case CalculadoraService.DIVISION:
         resultado = num1 / num2;
         break;
-      case CalculadoraService.MULTIPLICACAO:
+      case CalculadoraService.MULTIPLICACION:
         resultado = num1 * num2;
         break;
       default:
